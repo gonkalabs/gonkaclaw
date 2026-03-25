@@ -58,7 +58,12 @@ fi
 
 # ─── Configuration ───────────────────────────────────────────────────────────
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_SOURCE="${BASH_SOURCE[0]}"
+if [[ "$SCRIPT_SOURCE" == /dev/fd/* ]] || [[ "$SCRIPT_SOURCE" == /proc/self/fd/* ]] || [ -z "$SCRIPT_SOURCE" ]; then
+  SCRIPT_DIR="$(pwd)"
+else
+  SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_SOURCE")" && pwd)"
+fi
 INSTALL_DIR="${INSTALL_DIR:-$SCRIPT_DIR/opengnk}"
 OPENGNK_PORT="${OPENGNK_PORT:-8080}"
 NODE_URL="${NODE_URL:-http://node1.gonka.ai:8000}"
