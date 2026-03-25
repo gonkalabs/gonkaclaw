@@ -58,8 +58,8 @@ fi
 
 # ─── Configuration ───────────────────────────────────────────────────────────
 
-SCRIPT_SOURCE="${BASH_SOURCE[0]}"
-if [[ "$SCRIPT_SOURCE" == /dev/fd/* ]] || [[ "$SCRIPT_SOURCE" == /proc/self/fd/* ]] || [ -z "$SCRIPT_SOURCE" ]; then
+SCRIPT_SOURCE="${BASH_SOURCE[0]:-}"
+if [ -z "$SCRIPT_SOURCE" ] || [[ "$SCRIPT_SOURCE" == /dev/fd/* ]] || [[ "$SCRIPT_SOURCE" == /proc/self/fd/* ]]; then
   SCRIPT_DIR="$(pwd)"
 else
   SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_SOURCE")" && pwd)"
