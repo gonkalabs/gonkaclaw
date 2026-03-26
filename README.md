@@ -2,7 +2,7 @@
 
 **Gonka.ai × OpenClaw** — one-command setup for almost-free AI agents.
 
-GonkaClaw sets up [openGNK](https://github.com/gonkalabs/opengnk) (a Gonka inference proxy) and [OpenClaw](https://github.com/claw-ai/openclaw) together, giving you a fully working AI agent framework powered by Gonka's decentralized inference network — at up to **100x less cost** than commercial APIs.
+GonkaClaw sets up [openGNK](https://github.com/gonkalabs/opengnk) (a Gonka inference proxy) and [OpenClaw](https://github.com/openclaw/openclaw) together, giving you a fully working AI agent framework powered by Gonka's decentralized inference network — at up to **100x less cost** than commercial APIs.
 
 ## Quick Start
 
